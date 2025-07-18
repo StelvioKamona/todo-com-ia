@@ -22,6 +22,7 @@ Transformar a experiência de gestão de tarefas numa solução mais eficiente e
 - Eliseu Chimbaia
 - Manuel Chibia
 - Stélvio Kamona
+- Clemente Correia
 - Francisco Pondua Kuñala
 
 ---
