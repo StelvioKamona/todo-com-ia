@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Minhas Tarefas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="pagina ion-padding">
+  <div class="cabecalho">
+    <h2>Organize seu dia com inteligência</h2>
+  </div>
+
+  <div class="formulario-tarefa">
+    <ion-input
+      placeholder="Nova tarefa..."
+      [(ngModel)]="novaTarefa"
+      (keyup.enter)="adicionarTarefa()"
+    ></ion-input>
+    <ion-button
+      shape="round"
+      size="small"
+      color="secondary"
+      (click)="adicionarTarefa()"
+    >
+      ➕
+    </ion-button>
+  </div>
+
+  <ion-list class="lista-tarefas">
+    <ion-item
+      *ngFor="let tarefa of tarefas; let i = index"
+      lines="none"
+      (click)="exibirDetalhes(tarefa)"
+      [class.tarefa-concluida]="tarefa.concluida"
+      [class.tarefa-pendente]="!tarefa.concluida"
+    >
+      <ion-label class="tarefa-texto" [class.concluida]="tarefa.concluida">
+        {{ tarefa.titulo }}
+      </ion-label>
+
+      <ion-buttons slot="end">
+        <ion-button
+          *ngIf="!tarefa.concluida"
+          size="small"
+          fill="clear"
+          color="success"
+          (click)="concluirTarefa(i); $event.stopPropagation()"
+        >
+          ✔
+        </ion-button>
+        <ion-button
+          size="small"
+          fill="clear"
+          color="danger"
+          (click)="removerTarefa(i); $event.stopPropagation()"
+        >
+          🗑
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+  <ion-card *ngIf="detalhesTarefa" class="card-detalhes">
+    <ion-card-header>
+      <ion-card-title>{{ detalhesTarefa.titulo }}</ion-card-title>
+      <ion-card-subtitle>
+        Status:
+        <ion-badge [color]="detalhesTarefa.concluida ? 'success' : 'warning'">
+          {{ detalhesTarefa.concluida ? 'Concluída' : 'Pendente' }}
+        </ion-badge>
+      </ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>
+        <strong>Data de criação:</strong>
+        {{ detalhesTarefa.criadaEm.toDate() | date: 'medium' }}
+      </p>
+
+      <ion-button expand="block" fill="clear" (click)="fecharDetalhes()">
+        Fechar
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

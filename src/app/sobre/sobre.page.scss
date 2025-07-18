@@ -1,0 +1,38 @@
+.pagina {
+  --background: #121212;
+  color: #e0e0e0;
+}
+
+.sobre-container {
+  text-align: center;
+
+  .icone {
+    font-size: 4rem;
+    color: #00bcd4;
+    margin-bottom: 8px;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    color: #00bcd4;
+    margin: 0;
+  }
+
+  .descricao {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    color: #cfd8dc;
+    padding: 0 16px;
+  }
+
+  ion-card {
+    background: #1e1e1e;
+    margin-top: 24px;
+  }
+
+  .info-final {
+    margin-top: 32px;
+    font-size: 1rem;
+    color: #9e9e9e;
+  }
+}

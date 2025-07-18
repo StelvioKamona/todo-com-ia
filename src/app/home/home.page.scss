@@ -1,0 +1,96 @@
+.pagina {
+  --background: #121212;
+  padding: 1rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.cabecalho {
+  text-align: center;
+  margin-bottom: 16px;
+
+  h2 {
+    font-size: 1.3rem;
+    color: #00bcd4;
+    font-weight: 500;
+  }
+}
+
+.formulario-tarefa {
+  display: flex;
+  gap: 10px;
+  background: #1e1e1e;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  align-items: center;
+
+  ion-input {
+    flex: 1;
+    background: #2a2a2a;
+    color: #e0e0e0;
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-size: 0.95rem;
+  }
+
+  ion-button {
+    margin: 0;
+    font-size: 1rem;
+  }
+}
+
+.lista-tarefas {
+  margin-top: 20px;
+}
+
+.tarefa-item {
+  background: #1f1f1f;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  padding: 10px;
+
+  .tarefa-texto {
+    font-size: 1.2rem;
+    color: #e0e0e0;
+
+    &.concluida {
+      text-decoration: line-through;
+      color: #81c784;
+    }
+  }
+}
+
+.tarefa-concluida {
+  background-color: #d4edda;
+  color: #155724;
+  text-decoration: line-through;
+}
+
+.tarefa-pendente {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.tarefa-texto {
+  font-size: 1.2rem; // ⬆️ Aumenta o tamanho da fonte da tarefa
+}
+
+.card-detalhes {
+  margin-top: 20px;
+  border: 1px solid var(--ion-color-medium);
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

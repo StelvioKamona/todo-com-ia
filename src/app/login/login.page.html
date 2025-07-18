@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/intro"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="pagina ion-padding">
+  <div class="login-container">
+    <ion-icon name="lock-closed-outline" class="icone"></ion-icon>
+    <h2>Entrar na sua conta</h2>
+
+    <ion-list lines="none">
+      <ion-item>
+        <ion-input
+          label="Email"
+          labelPlacement="floating"
+          type="email"
+          [(ngModel)]="email"
+          required
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          label="Senha"
+          labelPlacement="floating"
+          type="password"
+          [(ngModel)]="senha"
+          required
+        ></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-button
+      expand="block"
+      shape="round"
+      color="secondary"
+      (click)="login()"
+    >
+      Entrar
+    </ion-button>
+    <ion-button fill="clear" routerLink="/registro" expand="block">
+      Criar uma conta
+    </ion-button>
+    <ion-text color="danger" *ngIf="mensagemErro">
+      <p class="mensagem-erro">{{ mensagemErro }}</p>
+    </ion-text>
+  </div>
+</ion-content>

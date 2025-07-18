@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/intro"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Criar Conta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="pagina ion-padding">
+  <div class="login-container">
+    <ion-icon name="person-add-outline" class="icone"></ion-icon>
+    <h2>Nova Conta</h2>
+
+    <ion-list lines="none">
+      <ion-item>
+        <ion-input
+          label="Email"
+          labelPlacement="floating"
+          type="email"
+          [(ngModel)]="email"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          label="Senha"
+          labelPlacement="floating"
+          type="password"
+          [(ngModel)]="senha"
+        ></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-button
+      expand="block"
+      shape="round"
+      color="secondary"
+      (click)="registrar()"
+    >
+      Criar Conta
+    </ion-button>
+  </div>
+</ion-content>

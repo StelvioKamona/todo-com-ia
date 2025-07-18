@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Estatísticas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="pagina ion-padding">
+  <h2 class="titulo">Resumo da sua produtividade</h2>
+
+  <ng-container *ngIf="!carregando; else carregandoDados">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Total de Tarefas</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <h1>{{ totalTarefas }}</h1>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Tarefas Concluídas</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <h1>{{ tarefasFinalizadas }}</h1>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Eficiência</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <h1>{{ eficiencia }}%</h1>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card color="tertiary">
+      <ion-card-header>
+        <ion-card-title>Análise da IA</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{ sugestaoIA }}</p>
+      </ion-card-content>
+    </ion-card>
+  </ng-container>
+
+  <ng-template #carregandoDados>
+    <ion-card>
+      <ion-card-content class="loading-card">
+        <ion-spinner name="dots"></ion-spinner>
+        <p>Carregando estatísticas...</p>
+      </ion-card-content>
+    </ion-card>
+  </ng-template>
+</ion-content>

@@ -1,0 +1,41 @@
+.pagina {
+  --background: #121212;
+  color: #ffffff;
+
+  .login-container {
+    text-align: center;
+    padding-top: 10vh;
+
+    h2 {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      color: #00bcd4;
+    }
+
+    ion-list {
+      margin-bottom: 20px;
+
+      ion-item {
+        background: #1f1f1f;
+        border-radius: 10px;
+        margin-bottom: 12px;
+
+        ion-input {
+          color: #ffffff;
+        }
+      }
+    }
+
+    .icone {
+      font-size: 3rem;
+      color: #00bcd4;
+      margin-bottom: 16px;
+    }
+  }
+}
+
+.mensagem-erro {
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 12px;
+}
